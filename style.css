@@ -1,0 +1,351 @@
+/* =========================
+   تنظیمات اصلی صفحه
+   ========================= */
+
+/* رنگ پس‌زمینه کل صفحه */
+body {
+    background-color: blue;
+    margin: 0;
+}
+
+
+/* =========================
+   عنوان اصلی
+   ========================= */
+
+/* تنظیم اندازه متن note */
+#note {
+    font-size: 36px;
+}
+
+
+/* =========================
+   منوی اصلی
+   ========================= */
+
+/* تنظیم ظاهر منوی اصلی */
+.m1 {
+    margin: 60px;
+    font-size: 20px;
+    color: white;
+
+    /* قرار دادن آیتم‌های منو کنار هم */
+    display: flex;
+
+    /* فاصله بین آیتم‌های منو */
+    gap: 30px;
+
+    /* حذف نقطه‌های لیست */
+    list-style: none;
+
+    /* وسط‌چین عمودی آیتم‌ها */
+    align-items: center;
+}
+
+
+/* تنظیم لینک‌های صفحه */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* =========================
+   پاراگراف‌ها
+   ========================= */
+
+/* ظاهر عمومی پاراگراف‌ها */
+p {
+    margin: 30px;
+    color: white;
+}
+
+
+/* =========================
+   زیرمنوی product
+   ========================= */
+
+/* هر li مرجع مناسبی برای زیرمنو باشد */
+.m1 li {
+    position: relative;
+}
+
+
+/* زیرمنو در حالت عادی مخفی است */
+.m1 li ul {
+    display: none;
+
+    /* زیرمنو از جریان اصلی منو خارج می‌شود */
+    position: absolute;
+
+    /* زیر product قرار می‌گیرد */
+    top: 100%;
+
+    /* از سمت چپ product شروع می‌شود */
+    left: 0;
+
+    /* رنگ پس‌زمینه زیرمنو */
+    background-color: rgb(136, 136, 228);
+
+    /* فاصله داخلی زیرمنو */
+    padding: 10px;
+
+    /* حذف نقطه‌های لیست */
+    list-style: none;
+}
+
+
+/* وقتی موس روی product می‌رود، زیرمنو نمایش داده می‌شود */
+.m1 li:hover ul {
+    display: block;
+}
+
+
+/* فاصله بین آیتم‌های زیرمنو */
+.m1 li ul li {
+    margin: 10px 0;
+}
+
+
+/* =========================
+   کادرهای خرید، تماس و عضویت
+   ========================= */
+
+/* هر سه کادر در حالت عادی مخفی هستند */
+#bu,
+#phoneBo,
+#memberBo {
+    display: none;
+
+    /* عرض کادر حدود 20 درصد صفحه */
+    width: 20vw;
+
+    /* ارتفاع را آزاد می‌گذاریم */
+    height: auto;
+
+    /* فاصله محتوا از لبه کادر */
+    padding: 20px;
+
+    /* حاشیه مشکی پررنگ */
+    border: 4px solid black;
+
+    /* گوشه‌های گرد */
+    border-radius: 12px;
+
+    /* محاسبه صحیح عرض با padding و border */
+    box-sizing: border-box;
+
+    /* رنگ داخل کادر */
+    background-color: white;
+
+    /* کادر مستقل از صفحه قرار می‌گیرد */
+    position: fixed;
+
+    /* وسط صفحه */
+    top: 50%;
+    left: 50%;
+
+    /* قرار دادن دقیق در مرکز */
+    transform: translate(-50%, -50%);
+}
+
+
+/* =========================
+   کادر تلفن
+   ========================= */
+
+/* عنوان تلفن */
+#phoneBo h3 {
+    margin: 0 0 15px 0;
+    color: black;
+}
+
+
+/* شماره تلفن */
+#phoneBo p {
+    margin: 0;
+    color: black;
+    font-size: 18px;
+}
+
+
+/* =========================
+   کادر عضویت
+   ========================= */
+
+/* فرم عضویت به صورت عمودی */
+#memberForm {
+    display: flex;
+
+    /* عناصر زیر هم قرار می‌گیرند */
+    flex-direction: column;
+
+    /* فاصله بین خانه‌های فرم */
+    gap: 12px;
+}
+
+
+/* خانه‌های فرم عضویت */
+#memberForm input {
+    padding: 10px;
+
+    /* حاشیه مشکی پررنگ */
+    border: 3px solid black;
+
+    /* گوشه‌های گرد */
+    border-radius: 6px;
+
+    /* اندازه‌گیری بهتر */
+    box-sizing: border-box;
+}
+
+
+/* دکمه عضویت */
+#memberForm button {
+    padding: 10px;
+
+    /* حاشیه مشکی پررنگ */
+    border: 3px solid black;
+
+    /* گوشه‌های گرد */
+    border-radius: 6px;
+
+    /* نشانگر موس */
+    cursor: pointer;
+}
+
+
+/* =========================
+   کادر خرید
+   ========================= */
+
+/* تنظیم ارتفاع و اندازه کادر خرید */
+#bu {
+    height: auto;
+}
+
+
+/* عنوان کادر خرید */
+#bu h3 {
+    color: black;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+
+/* هر ردیف محصول */
+.product-row {
+    display: flex;
+
+    /* وسط‌چین عمودی */
+    align-items: center;
+
+    /* فاصله مناسب بین قسمت‌های ردیف */
+    justify-content: space-between;
+
+    /* فاصله داخلی بالا و پایین */
+    padding: 12px 0;
+
+    /* خط جداکننده محصولات */
+    border-bottom: 1px solid black;
+}
+
+
+/* نام محصول */
+.product-row > span:first-child {
+    color: black;
+}
+
+
+/* قسمت کنترل تعداد */
+.quantity {
+    display: flex;
+
+    /* وسط‌چین کردن دکمه‌ها و عدد */
+    align-items: center;
+
+    /* فاصله بین - ، عدد و + */
+    gap: 8px;
+}
+
+
+/* دکمه‌های + و - */
+.quantity button {
+    width: 28px;
+    height: 28px;
+
+    /* رنگ دکمه */
+    background-color: white;
+
+    /* حاشیه مشکی پررنگ */
+    border:none;
+    /* نشانگر موس */
+    cursor: pointer;
+
+    /* اندازه علامت + و - */
+    font-size: 18px;
+}
+
+
+/* عدد تعداد محصول */
+.quantity .number {
+    color: black;
+
+    /* حداقل عرض برای مرتب ماندن عدد */
+    min-width: 20px;
+    /* وسط‌چین کردن عدد */
+    text-align: center;
+}
+
+
+/* قیمت محصول */
+.product-row .price {
+    color: black;
+}
+
+
+/* =========================
+   قسمت پایین سبد خرید
+   ========================= */
+
+/* بخش جمع مبلغ و دکمه خرید */
+.cart-bottom {
+    margin-top: 20px;
+
+    /* عناصر زیر هم قرار می‌گیرند */
+    display: flex;
+
+    flex-direction: column;
+
+    /* فاصله بین مبلغ و دکمه */
+    gap: 15px;
+}
+
+
+/* متن جمع مبلغ */
+.cart-bottom strong {
+    color: black;
+}
+
+
+/* دکمه خرید نهایی */
+#checkout {
+    width: 100%;
+
+    padding: 10px;
+
+    /* رنگ دکمه */
+    background-color: white;
+
+    /* رنگ نوشته */
+    color: black;
+
+    /* حاشیه مشکی پررنگ */
+    border: 3px solid black;
+
+    /* نشانگر موس */
+    cursor: pointer;
+
+    /* اندازه نوشته */
+    font-size: 16px;
+}
