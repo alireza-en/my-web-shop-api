@@ -1,7 +1,7 @@
 
 const express = require("express");
 const path = require("path");
-
+const { getCustomers } = require("./database");
 const app = express();
 
 
@@ -90,7 +90,29 @@ app.post("/api/feedback", (req, res) => {
     });
 
 });
+// =========================
+// Customers API
+// =========================
 
+app.get("/api/customers", async (req, res) => {
+
+    try {
+
+        const customers = await getCustomers();
+
+        res.json(customers);
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            message: "Database error"
+        });
+
+    }
+
+});
 
 // =========================
 // Start Server
