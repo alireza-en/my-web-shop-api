@@ -1,13 +1,11 @@
-
 require('dotenv').config();
 const sql = require("mssql");
 
 const config = {
-    server: "172.21.240.1",
-    database: "databaweb2",
-
-    user: "nodeuser",
-    password: "12345",
+    server: process.env.DB_SERVER,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
 
     options: {
         encrypt: true,
@@ -27,7 +25,6 @@ async function getCustomers() {
 }
 
 async function addCustomer(member) {
-
     const pool = await sql.connect(config);
 
     const result = await pool.request()
@@ -37,16 +34,14 @@ async function addCustomer(member) {
         .query(`
             INSERT INTO dbo.Customer
             (FullName, Phone, Address)
-
             VALUES
             (@FullName, @Phone, @Address)
         `);
 
     return result;
-
 }
+
 module.exports = {
     getCustomers,
     addCustomer
 };
-
